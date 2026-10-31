@@ -24,6 +24,14 @@ _FRIENDLY: list[tuple[tuple[type[Exception], ...], str]] = [
         "Gagal relogin otomatis. Minta user login manual: ig_login atau ig_login_sessionid.",
     ),
     (
+        (igx.ClientNeedsUpgradeError,),
+        "Instagram menolak flow login mobile dari konteks ini (error_type=needs_upgrade) - "
+        "umum terjadi saat login password dari IP/perangkat baru yang belum dipercaya. "
+        "Solusi paling andal: pakai ig_login_sessionid dengan cookie 'sessionid' dari browser "
+        "yang sudah login ke instagram.com. Alternatif: update instagrapi ke versi terbaru, "
+        "atau coba lagi nanti dari IP yang sama.",
+    ),
+    (
         (igx.ChallengeRequired,),
         "Instagram memicu challenge verifikasi (mis. 'was this you', selfie captcha). "
         "Selesaikan manual di aplikasi/hp user, lalu coba login lagi.",
