@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "instagrapi-mcp"
+version = "0.1.0"
+description = "MCP server wrapping instagrapi - Instagram tools for AI agents (OpenClaw, Claude, etc.)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "mcp>=1.9.0,<2",
+    "instagrapi>=3.2.2",
+]
+
+[project.optional-dependencies]
+video = [
+    "imageio>=2.34",
+    "imageio-ffmpeg>=0.4.9",
+    "numpy",
+    "proglog",
+]
+
+[project.scripts]
+instagrapi-mcp = "instagrapi_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

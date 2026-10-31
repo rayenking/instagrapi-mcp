@@ -1,0 +1,14 @@
+# Local state - NEVER commit (contains Instagram session & credentials)
+data/
+.instagrapi-mcp/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# OS / editor
+.DS_Store
